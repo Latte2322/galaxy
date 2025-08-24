@@ -33,9 +33,18 @@ for (let i = 0; i < item_descr_objects.length; i += 1) {
     item_price_objects[i].innerHTML = item_price[i]
 }
 
+let addButtons = document.querySelectorAll('.add-to-cart-btn');
+let cartCounter = document.querySelector('.cart-amount');
+let counterValue = 0;
 
+function incrementCartCounter() {
+  counterValue++;
+  cartCounter.textContent = counterValue;
+}
 
-
+for (let i = 0; i < addButtons.length; i++) {
+  addButtons[i].addEventListener('click', incrementCartCounter);
+}
 
 
 
